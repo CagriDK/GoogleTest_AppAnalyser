@@ -12,6 +12,10 @@ ${CMAKE_CURRENT_LIST_DIR}/lib/libgtest.a
 ${CMAKE_CURRENT_LIST_DIR}/lib/libgmock.a 
 ${CMAKE_CURRENT_LIST_DIR}/lib/libgmock_main.a
 )
+
+if(UNIX)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+endif()
    
 add_test(
     NAME TestApp
